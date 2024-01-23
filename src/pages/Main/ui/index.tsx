@@ -1,5 +1,5 @@
 import { router } from '@app/app/routes'
-import { Header, Footer, Content } from '@app/components'
+import { Header, Content, Footer } from '../components'
 import { RouterProvider } from '@app/libs'
 
 import * as S from './styles'
