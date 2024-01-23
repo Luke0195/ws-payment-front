@@ -1,3 +1,10 @@
-export function App() {
-  return <h1 className="bg-red-700"> App Component 2 </h1>
+import GlobalStyles from '@app/assets/global/global'
+import { Header } from '../index'
+export const App = (): JSX.Element => {
+  return (
+    <>
+      <Header />
+      <GlobalStyles />
+    </>
+  )
 }
