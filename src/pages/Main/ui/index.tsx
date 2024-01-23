@@ -1,4 +1,4 @@
-import { router } from '@app/app/routes'
+import { Routes } from '@app/app/routes'
 import { Header, Content, Footer } from '../components'
 import { RouterProvider } from '@app/libs'
 
@@ -8,7 +8,7 @@ export const Main = () => {
     <S.Container>
       <Header />
       <Content>
-        <RouterProvider router={router} />
+        <Routes />
       </Content>
       <Footer />
     </S.Container>

@@ -1,12 +1,17 @@
 import { Dropdown, DropdownMenu, DropdownItem } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
 import * as S from './styles'
 export function Header() {
   return (
     <S.Header>
-      <h2> Contas a Pagar </h2>
+      <Link to="/">
+        <h2> Contas a Pagar </h2>
+      </Link>
       <nav>
         <ul>
-          <li> Clientes</li>
+          <Link to="/clients">
+            <li> Clientes</li>
+          </Link>
           <li> Pagamentos</li>
           <li> Títulos</li>
           <Dropdown text="Relatórios">

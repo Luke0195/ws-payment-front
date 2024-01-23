@@ -1,15 +1,4 @@
-import { RouteObject } from 'react-router-dom'
-import { Home, Clients } from '@app/pages'
+import { Clients } from '@app/pages/Clients/ui'
+import { Home } from '@app/pages/Home/ui'
 
-const routesList: RouteObject[] = [
-  {
-    path: '/',
-    element: <Home />,
-  },
-  {
-    path: '/clients',
-    element: <Clients />,
-  },
-]
-
-export { routesList }
+export { Clients, Home }
