@@ -7,6 +7,7 @@ export function Header() {
       <nav>
         <ul>
           <li> Clientes</li>
+          <li> Pagamentos</li>
           <li> Títulos</li>
           <Dropdown text="Relatórios">
             <DropdownMenu>
