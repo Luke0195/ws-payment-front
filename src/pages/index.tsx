@@ -1,3 +1,5 @@
-export * from './Clients/ui'
-export * from './Home/ui'
-export * from './Main/ui'
+import { Clients } from './Clients/ui'
+import { Home } from './Home/ui'
+import { Main } from './Main/ui'
+
+export { Clients, Home, Main }

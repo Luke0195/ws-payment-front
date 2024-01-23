@@ -1,4 +1,3 @@
-import { FiSearch } from 'react-icons/fi'
 import { CardRoot } from './card-root'
 import { getCurrentIconById } from '../helpers/get-current-icon'
 
