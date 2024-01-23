@@ -1,0 +1,41 @@
+{
+  "data": [
+    {
+      "id": 0,
+      "type": "backend",
+      "iconType": 0,
+      "textDescription": "Tecnológias usados no desenvolvimento backend",
+      "techs": [
+        "Springboot",
+        "Spring IOC",
+        "Spring Web",
+        "Spring Data Jpa",
+        "Postgres",
+        "Lombok",
+        "Validation",
+        "Docker",
+        "Docker-Compose",
+        "Hibernate",
+        "Diagramas de Caso de Uso",
+        "Diagrama de Classe",
+        "Documentação com readme.md",
+        "API REST",
+        "JSON"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "frontend",
+      "iconType": 1,
+      "textDescription": "Tecnológias usados no desenvolvimento front",
+      "techs": [
+        "React",
+        "React Hooks",
+        "Context Api",
+        "React-Hook Form",
+        "React-query",
+        "Styled-Components"
+      ]
+    }
+  ]
+}
