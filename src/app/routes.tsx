@@ -1,13 +1,4 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import { Clients, Home } from '@app/pages'
+import { createBrowserRouter } from '@app/libs'
+import { routesList } from './routes-list'
 
-export const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <Home />,
-  },
-  {
-    path: '/clients',
-    element: <Clients />,
-  },
-])
+export const router = createBrowserRouter(routesList)

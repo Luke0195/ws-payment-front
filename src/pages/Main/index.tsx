@@ -1,8 +1,8 @@
 import { router } from '@app/app/routes'
 import { Header, Footer, Content } from '@app/components'
-import { RouterProvider } from 'react-router-dom'
-import * as S from './styles'
+import { RouterProvider } from '@app/libs'
 
+import * as S from './styles'
 export const Main = () => {
   return (
     <S.Container>
