@@ -1,4 +1,6 @@
 import GlobalStyles from '@app/assets/global/global'
+import { BrowserRouter, RouterProvider } from 'react-router-dom'
+import { router } from '@app/app/routes'
 import { Content, Footer, Header } from '../'
 import * as S from './styles'
 export const App = (): JSX.Element => {
@@ -6,8 +8,7 @@ export const App = (): JSX.Element => {
     <S.Container>
       <Header />
       <Content>
-        {' '}
-        <h1> Teste </h1>
+        <RouterProvider router={router} />
       </Content>
       <Footer />
       <GlobalStyles />
