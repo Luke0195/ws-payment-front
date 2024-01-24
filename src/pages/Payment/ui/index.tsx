@@ -24,6 +24,7 @@ export const Payment = () => {
     control,
     handleSubmit,
     formState: { isValid, errors },
+    reset,
   } = useForm({
     resolver: yupResolver(schema()),
     defaultValues: parseData(null),
@@ -41,6 +42,7 @@ export const Payment = () => {
       showWarningMessage(error.message)
     } finally {
       setLoading(false)
+      reset()
     }
   }
 
