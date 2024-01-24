@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from '@app/libs/react-router-dom'
 import { Header, WarningMessage } from '@app/components'
 import { Form, FormField, Input, Button, Loader } from '@app/libs/semantic-ui'
 import { useForm, Controller } from '@app/libs/react-hook-form'
@@ -17,6 +18,7 @@ import {
 import * as S from './styles'
 
 export const Payment = () => {
+  const navigate = useNavigate()
   const [loading, setLoading] = useState<boolean>(false)
   const {
     control,
@@ -34,6 +36,7 @@ export const Payment = () => {
     try {
       await service(data)
       showSuccessMessage('Pagamento criado com sucesso.')
+      navigate('/clients')
     } catch (error: any) {
       showWarningMessage(error.message)
     } finally {

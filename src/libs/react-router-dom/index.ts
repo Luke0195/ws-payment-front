@@ -1,2 +1,6 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-export { createBrowserRouter, RouterProvider }
+import {
+  createBrowserRouter,
+  RouterProvider,
+  useNavigate,
+} from 'react-router-dom'
+export { createBrowserRouter, RouterProvider, useNavigate }
