@@ -12,7 +12,9 @@ export function Header() {
           <Link to="/clients">
             <li> Clientes</li>
           </Link>
-          <li> Pagamentos</li>
+          <Link to="/payments">
+            <li> Pagamentos</li>
+          </Link>
           <li> Títulos</li>
           <Dropdown text="Relatórios">
             <DropdownMenu>
