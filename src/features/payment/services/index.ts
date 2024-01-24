@@ -10,6 +10,6 @@ export const createPaymentService = async (
     if (typeof response !== 'object') throw new Error('Invalid response')
     return response
   } catch (error: any) {
-    throw new Error(error)
+    throw new Error('Ocorreu um erro ao realizar há ação!')
   }
 }

@@ -9,6 +9,10 @@ import {
   schema,
   parseData,
 } from '@app/features/payment'
+import {
+  showSuccessMessage,
+  showWarningMessage,
+} from '@app/shared/hooks/toasts'
 
 import * as S from './styles'
 
@@ -27,16 +31,16 @@ export const Payment = () => {
 
   const onSubmit = async (data: PaymentForm): Promise<void> => {
     setLoading(true)
-    console.log(data)
     try {
-      const response = await service(data)
-      console.log(response)
-    } catch (error) {
-      console.log(error)
+      await service(data)
+      showSuccessMessage('Pagamento criado com sucesso.')
+    } catch (error: any) {
+      showWarningMessage(error.message)
     } finally {
       setLoading(false)
     }
   }
+
   return (
     <S.Container>
       <Header
