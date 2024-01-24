@@ -1,3 +1,3 @@
 import * as yup from 'yup'
-
-export { yup }
+import { yupResolver } from '@hookform/resolvers/yup'
+export { yup, yupResolver }
