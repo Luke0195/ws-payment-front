@@ -2,7 +2,7 @@ import { styled } from '@app/libs/styled-components'
 
 export const Container = styled.header`
   width: 100%;
-  max-width: 1280px;
+  max-width: 1580px;
   margin: auto;
   display: flex;
   flex-direction: column;

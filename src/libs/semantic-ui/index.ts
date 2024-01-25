@@ -1,3 +1,41 @@
-import { Card, Form, FormField, Button, Input, Loader } from 'semantic-ui-react'
+import {
+  Card,
+  Form,
+  FormField,
+  Button,
+  Input,
+  Loader,
+  Segment,
+  Table,
+  TableHeader,
+  TableHeaderCell,
+  TableRow,
+  TableBody,
+  TableCell,
+  Label,
+  TableFooter,
+  Menu,
+  MenuItem,
+  Icon,
+} from 'semantic-ui-react'
 
-export { Card, Form, FormField, Button, Input, Loader }
+export {
+  Card,
+  Form,
+  FormField,
+  Button,
+  Input,
+  Loader,
+  Segment,
+  Table,
+  TableHeader,
+  TableHeaderCell,
+  TableBody,
+  TableRow,
+  TableCell,
+  Label,
+  TableFooter,
+  Menu,
+  MenuItem,
+  Icon,
+}
