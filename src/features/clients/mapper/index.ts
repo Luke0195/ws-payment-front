@@ -1,10 +1,7 @@
-import { HttpResponseInterface, BodyInterface } from '../interfaces'
+import { BodyInterface } from '../interfaces'
+import { Client } from '@app/entities/client-model'
 
-export const parsedDataToDomain = (
-  data: HttpResponseInterface[],
-): BodyInterface[] => {
-  console.log(data)
-
+export const parsedDataToDomain = (data: Client[]): BodyInterface[] => {
   return data.map((item) => {
     const parsed: BodyInterface = {
       id: item.id,
