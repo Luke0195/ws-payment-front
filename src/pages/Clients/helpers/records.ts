@@ -25,4 +25,7 @@ export const header: ItemProps[] = [
   {
     label: 'Bairro',
   },
+  {
+    label: 'Ações',
+  },
 ]

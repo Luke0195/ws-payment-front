@@ -5,7 +5,7 @@ export type ItemProps = {
   label: string
 }
 
-type RecordHeaderProps = {
+export type RecordHeaderProps = {
   headerItems: ItemProps[]
 }
 
