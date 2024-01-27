@@ -17,6 +17,8 @@ import {
   Menu,
   MenuItem,
   Icon,
+  FormGroup,
+  Modal,
 } from 'semantic-ui-react'
 
 export {
@@ -38,4 +40,6 @@ export {
   Menu,
   MenuItem,
   Icon,
+  FormGroup,
+  Modal,
 }
