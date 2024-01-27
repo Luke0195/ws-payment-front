@@ -3,6 +3,7 @@ import { TableRow, TableHeaderCell } from '@app/libs/semantic-ui'
 
 export type ItemProps = {
   label: string
+  render_key: string
 }
 
 export type RecordHeaderProps = {
@@ -15,7 +16,10 @@ export const RecordHeader = (props: RecordHeaderProps) => {
     <S.RecordTableHeader>
       <TableRow>
         {headerItems.map((item) => (
-          <TableHeaderCell key={String(item)}> {item.label}</TableHeaderCell>
+          <TableHeaderCell key={String(item.render_key)}>
+            {' '}
+            {item.label}
+          </TableHeaderCell>
         ))}
       </TableRow>
     </S.RecordTableHeader>

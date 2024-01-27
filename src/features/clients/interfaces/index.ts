@@ -19,3 +19,13 @@ export interface BodyInterface {
   city: string
   subLocallity: string
 }
+
+export interface FormData {
+  name: string
+  code: string
+  email: string
+  phone: string
+  address: string
+  sub_locality: string
+  city: string
+}

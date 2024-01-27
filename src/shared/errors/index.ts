@@ -1,6 +1,2 @@
-export class InvalidRequest extends Error {
-  constructor(message: string) {
-    super(message)
-    this.name = 'InvalidRequest'
-  }
-}
+export * from './context-error'
+export * from './invalid-request'
