@@ -3,11 +3,7 @@ import * as yup from 'yup'
 const schema = () => {
   return yup.object({
     name: yup.string().required('O campo nome é obrigatório'),
-    code: yup
-      .string()
-      .required('O campo code é obrigatório')
-      .matches(/[0-9]{3}\.?[0-9]{3}\.?[0-9]{3}-?[0-9]{2}'/)
-      .matches(/[0-9]{2}\.?[0-9]{3}\.?[0-9]{3}\/?[0-9]{4}-?[0-9]{2}/),
+    code: yup.string().required('O campo code é obrigatório'),
     email: yup
       .string()
       .required('O campo email é obrigatório')

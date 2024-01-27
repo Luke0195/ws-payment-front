@@ -1,5 +1,6 @@
 import { axios } from '@app/libs/axios'
 import { InvalidRequest } from '@app/shared/errors'
+import { FormData } from '../interfaces'
 
 class ClientService {
   async fetchAllClients(): Promise<any> {

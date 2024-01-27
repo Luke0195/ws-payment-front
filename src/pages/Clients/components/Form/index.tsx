@@ -1,4 +1,5 @@
 import { Form as SemanticForm, FormField, Button } from '@app/libs/semantic-ui'
+import clientService from '@app/features/clients/services'
 import InputMask from 'react-input-mask'
 import { useForm, Controller } from '@app/libs/react-hook-form'
 import { FormData } from '@app/features/clients/interfaces'
@@ -6,16 +7,39 @@ import { Grid } from 'semantic-ui-react'
 import * as S from '../../ui/styles'
 import { labels } from './labels'
 import { useClientContext } from '../../context'
+import {
+  showSuccessMessage,
+  showWarningMessage,
+} from '@app/shared/hooks/toasts'
+import { useState } from 'react'
 
 export function Form() {
-  const { register, handleSubmit, control } = useForm<FormData>({})
+  const [loading, setLoading] = useState<boolean>(false)
+  const {
+    register,
+    handleSubmit,
+    control,
+
+    formState: { isValid, errors },
+  } = useForm<FormData>({})
+  console.log(errors)
   const {
     registerModal: { setShowRegisterModal },
   } = useClientContext()
 
-  const onSubmit = (data: FormData) => {
-    console.log(data)
+  const onSubmit = async (data: FormData): Promise<void> => {
+    setLoading(true)
+    try {
+      await clientService.createClient(data)
+      showSuccessMessage('Ação realizada com sucesso!')
+      setShowRegisterModal(null)
+    } catch (error) {
+      showWarningMessage('Ocorreu um erro ao realizar há ação')
+    } finally {
+      setLoading(false)
+    }
   }
+  console.log(isValid)
   return (
     <S.FormContainer>
       <header>
@@ -55,6 +79,7 @@ export function Form() {
                   control={control}
                   render={({ field }) => (
                     <InputMask
+                      {...register('phone')}
                       mask={'(99)99999-9999'}
                       placeholder="Informe o teleone"
                       {...field}
@@ -95,7 +120,10 @@ export function Form() {
             content="Cancelar"
             onClick={() => setShowRegisterModal(null)}
           />
-          <Button color="purple"> Salvar </Button>
+          <Button color="purple" disabled={!isValid || loading}>
+            {' '}
+            Salvar{' '}
+          </Button>
         </S.Toolbar>
       </SemanticForm>
     </S.FormContainer>
