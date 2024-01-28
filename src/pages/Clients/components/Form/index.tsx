@@ -19,19 +19,19 @@ export function Form() {
     register,
     handleSubmit,
     control,
-    formState: { isValid, errors },
+    formState: { isValid },
   } = useForm<FormData>({})
-  console.log(errors)
-  const {
-    registerModal: { setShowRegisterModal },
-  } = useClientContext()
+  const { setNotifications } = useClientContext()
 
   const onSubmit = async (data: FormData): Promise<void> => {
     setLoading(true)
     try {
       await clientService.createClient(data)
       showSuccessMessage('Ação realizada com sucesso!')
-      setShowRegisterModal(null)
+      setNotifications((prev) => {
+        prev.registerModal = null
+        return { ...prev }
+      })
     } catch (error) {
       showWarningMessage('Ocorreu um erro ao realizar há ação')
     } finally {
@@ -128,7 +128,12 @@ export function Form() {
         <S.Toolbar>
           <Button
             content="Cancelar"
-            onClick={() => setShowRegisterModal(null)}
+            onClick={() =>
+              setNotifications((prev) => {
+                prev.registerModal = null
+                return { ...prev }
+              })
+            }
           />
           <Button color="purple" disabled={!isValid || loading}>
             {loading ? <Loader active /> : 'Salvar'}

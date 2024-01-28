@@ -1,28 +1,25 @@
-import { TableBody, TableRow, Loader } from '@app/libs/semantic-ui'
-import { ItemProps } from './record-header'
-import * as S from './styles'
+import { TableBody, TableRow, TableCell } from '@app/libs/semantic-ui'
 
 interface RecordBodyProps {
   body: any[]
-  header: ItemProps[]
   loading: boolean
 }
 
 export function RecordBody(props: RecordBodyProps) {
-  const { loading, header } = props
-  const fields = header.map((item) => item.render_key)
-  console.log(fields)
+  const { body } = props
+
   return (
-    <S.RecordTableBody>
-      {loading ? (
-        <div>
-          <Loader active />
-        </div>
-      ) : (
-        <TableBody>
-          <TableRow></TableRow>
-        </TableBody>
-      )}
-    </S.RecordTableBody>
+    <TableBody>
+      {body.map((item) => {
+        const fields = Object.keys(item).map((field) => field)
+        return (
+          <TableRow>
+            {fields.map((field) => (
+              <TableCell width="2"> {item[field]}</TableCell>
+            ))}
+          </TableRow>
+        )
+      })}
+    </TableBody>
   )
 }

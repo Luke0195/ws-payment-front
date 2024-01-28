@@ -18,6 +18,4 @@ export const RecordTableHeader = styled(TableHeader)``
 
 export const RecordTableBody = styled.div`
   width: 100%;
-  margin-top: 16px;
-  min-height: 45vh;
 `

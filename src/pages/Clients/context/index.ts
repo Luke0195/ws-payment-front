@@ -1,13 +1,12 @@
 import { createContext, useContext } from 'react'
 import { ContextError } from '@app/shared/errors'
+import { NotificationsProps } from '../interfaces'
 
 type StateAction<T> = React.Dispatch<React.SetStateAction<T>>
 
 interface ContextProps {
-  registerModal: {
-    showRegisterModal: JSX.Element | null
-    setShowRegisterModal: StateAction<JSX.Element | null>
-  }
+  notifications: NotificationsProps
+  setNotifications: StateAction<NotificationsProps>
 }
 
 export const Context = createContext({} as ContextProps)

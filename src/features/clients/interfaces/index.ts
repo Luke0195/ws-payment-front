@@ -17,7 +17,8 @@ export interface BodyInterface {
   phone: string
   address: string
   city: string
-  subLocallity: string
+  sublocallity: string
+  actions: JSX.Element | null
 }
 
 export interface FormData {
