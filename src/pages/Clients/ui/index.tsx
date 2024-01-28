@@ -21,9 +21,10 @@ import { useState } from 'react'
 export const Clients = () => {
   const [showRegisterModal, setShowRegisterModal] =
     useState<JSX.Element | null>(null)
-  const { data } = useQuery({
+  const [search, setSearch] = useState<string>('')
+  const { data, refetch } = useQuery({
     queryKey: ['clients'],
-    queryFn: clientService.fetchAllClients,
+    queryFn: async () => await clientService.fetchAllClients(search),
     refetchInterval: 40000,
   })
 
@@ -47,6 +48,13 @@ export const Clients = () => {
               icon={<Icon name="user" />}
               iconPosition="left"
               style={{ width: 400 }}
+              value={search}
+              onChange={(value) => setSearch(value.target.value)}
+              onKeyDown={async (event: any) => {
+                if (event.key === 'Enter') {
+                  refetch()
+                }
+              }}
             />
           </div>
           <Button
