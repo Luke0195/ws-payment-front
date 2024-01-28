@@ -3,7 +3,7 @@ import clientService from '@app/features/clients/services'
 import InputMask from 'react-input-mask'
 import { useForm, Controller } from '@app/libs/react-hook-form'
 import { FormData } from '@app/features/clients/interfaces'
-import { Grid } from 'semantic-ui-react'
+import { Grid, Loader } from 'semantic-ui-react'
 import * as S from '../../ui/styles'
 import { labels } from './labels'
 import { useClientContext } from '../../context'
@@ -19,7 +19,6 @@ export function Form() {
     register,
     handleSubmit,
     control,
-
     formState: { isValid, errors },
   } = useForm<FormData>({})
   console.log(errors)
@@ -39,7 +38,7 @@ export function Form() {
       setLoading(false)
     }
   }
-  console.log(isValid)
+
   return (
     <S.FormContainer>
       <header>
@@ -57,8 +56,19 @@ export function Form() {
 
             <Grid.Column width={8}>
               <FormField>
-                <label>Cpf/Cnpj</label>
-                <input placeholder={labels.code} {...register('code')} />
+                <label>Cpf</label>
+                <Controller
+                  name="code"
+                  control={control}
+                  render={({ field }) => (
+                    <InputMask
+                      {...register('code')}
+                      mask={'999.999.999-99'}
+                      placeholder="Informe o teleone"
+                      {...field}
+                    />
+                  )}
+                />
               </FormField>
             </Grid.Column>
           </Grid.Row>
@@ -121,8 +131,7 @@ export function Form() {
             onClick={() => setShowRegisterModal(null)}
           />
           <Button color="purple" disabled={!isValid || loading}>
-            {' '}
-            Salvar{' '}
+            {loading ? <Loader active /> : 'Salvar'}
           </Button>
         </S.Toolbar>
       </SemanticForm>

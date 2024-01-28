@@ -24,6 +24,7 @@ export const Clients = () => {
   const { data } = useQuery({
     queryKey: ['clients'],
     queryFn: clientService.fetchAllClients,
+    refetchInterval: 40000,
   })
 
   const result = parsedDataToDomain(data ? data.content : [])
