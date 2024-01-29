@@ -25,7 +25,8 @@ export const Clients = () => {
   const result = parsedDataToDomain(data ? data.content : [], setNotifications)
 
   return (
-    <Context.Provider value={{ notifications, setNotifications }}>
+    <Context.Provider
+      value={{ notifications, setNotifications, refetch: refetch }}>
       <S.Container>
         <Header
           title="Clientes"

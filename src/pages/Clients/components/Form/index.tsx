@@ -21,7 +21,7 @@ export function Form() {
     control,
     formState: { isValid },
   } = useForm<FormData>({})
-  const { setNotifications } = useClientContext()
+  const { setNotifications, refetch } = useClientContext()
 
   const onSubmit = async (data: FormData): Promise<void> => {
     setLoading(true)
@@ -32,6 +32,7 @@ export function Form() {
         prev.registerModal = null
         return { ...prev }
       })
+      refetch()
     } catch (error) {
       showWarningMessage('Ocorreu um erro ao realizar há ação')
     } finally {
