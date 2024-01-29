@@ -21,6 +21,12 @@ class ClientService {
       throw new InvalidRequest('Error  Invalid Response')
     return response.data
   }
+
+  async deleteClientById(id: string): Promise<void> {
+    const response = await axios.delete(`/clients/${id}`)
+    if (typeof response !== 'object')
+      throw new InvalidRequest('Error, Invalid Response')
+  }
 }
 
 export default new ClientService()
